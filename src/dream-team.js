@@ -14,6 +14,7 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function createDreamTeam(members) {
+  if (!Array.isArray(members)) return false;
   let name = members.filter(x => typeof x === "string").map(x => x.trim()[0].toUpperCase()).sort().join("");
   return (name === "") ? false : name;
 }
